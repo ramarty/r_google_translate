@@ -31,7 +31,7 @@ r_google_translate_vec <- function(q_vec,
                                    source,
                                    model,
                                    key,
-                                   sleep = 0.1){
+                                   sleep = 0.02){
   
   out <- lapply(q_vec, 
                 r_google_translate, 
