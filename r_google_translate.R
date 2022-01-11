@@ -15,8 +15,8 @@ r_google_translate <- function(q,
   
   url <- utils::URLencode(url)
   get_url <- GET(url)
-  get_url_content <- content(get_url, as = "text", encoding = "UTF-8")
-  df <- fromJSON(get_url_content,flatten = TRUE)
+  get_url_content <- httr::content(get_url, as = "text", encoding = "UTF-8")
+  df <- jsonlite::fromJSON(get_url_content,flatten = TRUE)
   
   out <- df$data$translations$translatedText
   
